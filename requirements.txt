@@ -1,1 +1,2 @@
 ruamel.yaml==0.17.21
+deepdiff==5.8.0

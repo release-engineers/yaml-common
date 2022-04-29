@@ -2,19 +2,32 @@
 
 import sys
 import ruamel.yaml
+from deepdiff import DeepDiff
 
 yaml = ruamel.yaml.YAML()
 yaml.preserve_quotes = True
 
-data_by_filename = {}
+datas = []
 
 for filename in sys.argv[1:]:
     with open(filename, 'r') as f:
         data = yaml.load(f)
-        data_by_filename[filename] = data
+        datas.append(data)
 
-for filename, data in data_by_filename.items():
+common_data = datas[0]
+common_data_filename = sys.argv[1]
+specific_datas = datas[1:]
+specific_datas_filenames = sys.argv[2:]
+
+# print yamls
+print('---')
+print('# common data from {}'.format(common_data_filename))
+yaml.dump(common_data, sys.stdout)
+
+for data in specific_datas:
     print('---')
-    print('# {}'.format(filename))
-    print('')
+    print('# specific data from {}'.format(specific_datas_filenames[specific_datas.index(data)]))
     yaml.dump(data, sys.stdout)
+    sys.stdout.write('\n')
+
+# print(DeepDiff(specific_datas[0], specific_datas[1]))
