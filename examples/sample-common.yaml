@@ -11,14 +11,7 @@ example-common:
   bool: true
   null:
 
-example-specific:
-  depth:
-    more-depth:
-      # specific comment to sample-1.yaml
-      str-specific: sample-2.yaml
-
 example-mixed:
   depth:
     more-depth:
-      str-common: common string
-      str-specific: sample-2.yaml
+      str-specific: sample-1.yaml

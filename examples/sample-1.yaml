@@ -1,4 +1,5 @@
 example-common:
+  # common comment
   depth:
     more-depth:
       array:
@@ -8,12 +9,12 @@ example-common:
     int: 123
     float: 1.23
   bool: true
-  null: null
-  empty:
+  null:
 
 example-specific:
   depth:
     more-depth:
+      # specific comment to sample-1.yaml
       str-specific: sample-1.yaml
 
 example-mixed:

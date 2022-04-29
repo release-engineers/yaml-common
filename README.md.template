@@ -2,9 +2,19 @@
 
 Extracts common parts of YAML files.
 
+### Setup
+
 ```
 #!/bin/bash
 python -m venv .venv
 source .venv/Scripts/activate
 python -m pip install -r requirements.txt
+```
+
+### Run
+
+```
+#!/bin/bash
+source .venv/Scripts/activate
+./main.py examples/sample-empty.yaml examples/sample-1.yaml examples/sample-2.yaml
 ```
