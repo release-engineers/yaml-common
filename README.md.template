@@ -11,7 +11,14 @@ source .venv/Scripts/activate
 python -m pip install -r requirements.txt
 ```
 
-### Run
+### Usage
+
+```
+source .venv/Scripts/activate
+./main.py <common file.yml> <merged file1.yml> <merged file2.yml> ...
+```
+
+### Example
 
 ```
 #!/bin/bash

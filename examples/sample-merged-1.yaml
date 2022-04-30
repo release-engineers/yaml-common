@@ -28,3 +28,7 @@ example-mixed:
       - because this is specific to sample-merged-1.yaml
       str-common: common string
       str-specific: sample-merged-1.yaml
+      sre-common-multiline: |
+          -----BEGIN PUBLIC KEY-----
+          01234567890
+          -----END PUBLIC KEY-----

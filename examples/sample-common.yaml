@@ -18,3 +18,8 @@ example-mixed:
       - yes
       - for sure again
       str-common: common string
+      sre-common-multiline: |
+          -----BEGIN PUBLIC KEY-----
+          01234567890
+          -----END PUBLIC KEY-----
+
