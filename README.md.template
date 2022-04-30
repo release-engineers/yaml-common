@@ -23,6 +23,11 @@ See [usage.sh](usage.sh). It demonstrates moving the common parts of "1.yaml" an
 
 #### Input
 
+Content of `common.yaml`:
+```yml common
+{{ load('examples/common.yaml') }}
+```
+
 Content of `1.yaml`:
 ```yml
 {{ load('examples/1.yaml') }}
@@ -33,14 +38,14 @@ Content of `2.yaml`:
 {{ load('examples/2.yaml') }}
 ```
 
-Content of `common.yaml`:
-```yml common
-{{ load('examples/common.yaml') }}
-```
-
 #### Output
 
 After running the above example, the content of the files will have changed to:
+
+Expected content of `common.yaml`:
+```yml
+{{ load('test/common.yaml') }}
+```
 
 Expected content of `1.yaml`:
 ```yml
@@ -50,9 +55,4 @@ Expected content of `1.yaml`:
 Expected content of `2.yaml`:
 ```yml
 {{ load('test/2.yaml') }}
-```
-
-Expected content of `common.yaml`:
-```yml
-{{ load('test/common.yaml') }}
 ```
