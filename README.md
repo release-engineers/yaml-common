@@ -93,7 +93,7 @@ example-common:
 example-specific:
   depth:
     more-depth:
-      # specific comment to 1.yaml
+      # specific comment to 2.yaml
       str-specific: 2.yaml
 example-exists:
   str-2: This property exists in all files, and is overridden by 2.yaml
@@ -148,7 +148,7 @@ Expected content of `2.yaml`:
 example-specific:
   depth:
     more-depth:
-      # specific comment to 1.yaml
+      # specific comment to 2.yaml
       str-specific: 2.yaml
 example-exists:
   str-2: This property exists in all files, and is overridden by 2.yaml
