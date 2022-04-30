@@ -2,8 +2,6 @@
 
 # [EffortGames/yaml-common](https://github.com/EffortGames)
 
-# yaml-common
-
 Extracts and merges common parts of YAML from one set of files into a common file.
 Note that this project attempts to preserve comments and order of properties in your YAML files, but can not preserve formatting.
 
@@ -22,7 +20,7 @@ pip install -r requirements.txt
 
 `main.py <common file> <file 1> <file 2> ...`
 
-See [usage.sh](usage.sh).
+See [usage.sh](usage.sh). It demonstrates moving the common parts of "1.yaml" and "2.yaml" into "common.yaml" where it does not already contain its own definition;
 
 ```bash
 #!/usr/bin/env bash
@@ -37,9 +35,6 @@ source venv/bin/activate || source venv/Scripts/activate
 deactivate
 
 ```
-
-The above example moves the common parts of "1.yaml" and "2.yaml" into "common.yaml" where possible. Possible means,
-that "common.yaml" does not already contain its own definition for any parts.
 
 #### Input
 
