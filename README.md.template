@@ -6,6 +6,8 @@
 
 Extracts and merges common parts of YAML from one set of files into a common file.
 
+Note that this project attempts to preserve comments, but can not preserve formatting.
+
 ## Usage
 
 `main.py <common file> <merged file 1> <merged file 2> ...`
