@@ -7,6 +7,7 @@ on:
     paths:
       - 'README.md.template'
       - '.github/workflows/generate-readme.yml'
+  workflow_dispatch:
 
 permissions:
   contents: write
