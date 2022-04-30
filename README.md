@@ -38,6 +38,14 @@ deactivate
 
 #### Input
 
+Content of `common.yaml`:
+```yml common
+example-exists:
+  str-1: This property already exists in common.yaml
+  str-2: This property exists in all files
+
+```
+
 Content of `1.yaml`:
 ```yml
 example-common:
@@ -113,17 +121,38 @@ example-mixed:
 
 ```
 
-Content of `common.yaml`:
-```yml common
-example-exists:
-  str-1: This property already exists in common.yaml
-  str-2: This property exists in all files
-
-```
-
 #### Output
 
 After running the above example, the content of the files will have changed to:
+
+Expected content of `common.yaml`:
+```yml
+example-exists:
+  str-1: This property already exists in common.yaml
+  str-2: This property exists in all files
+example-common:
+  # common comment
+  depth:
+    more-depth:
+      array:
+      - yes
+      - for sure
+      str: common string
+    int: 123
+    float: 1.23
+  bool: true
+  null:
+example-mixed:
+  array-common:
+  - yes
+  - for sure again
+  str-common: common string
+  sre-common-multiline: |
+    -----BEGIN PUBLIC KEY-----
+    01234567890
+    -----END PUBLIC KEY-----
+
+```
 
 Expected content of `1.yaml`:
 ```yml
@@ -157,34 +186,5 @@ example-mixed:
   - no
   - because this is specific to 2.yaml
   str-specific: 2.yaml
-
-```
-
-Expected content of `common.yaml`:
-```yml
-example-exists:
-  str-1: This property already exists in common.yaml
-  str-2: This property exists in all files
-example-common:
-  # common comment
-  depth:
-    more-depth:
-      array:
-      - yes
-      - for sure
-      str: common string
-    int: 123
-    float: 1.23
-  bool: true
-  null:
-example-mixed:
-  array-common:
-  - yes
-  - for sure again
-  str-common: common string
-  sre-common-multiline: |
-    -----BEGIN PUBLIC KEY-----
-    01234567890
-    -----END PUBLIC KEY-----
 
 ```
