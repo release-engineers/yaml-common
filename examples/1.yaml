@@ -10,12 +10,24 @@ example-common:
     float: 1.23
   bool: true
   null:
+example-specific:
+  depth:
+    more-depth:
+      # specific comment to 1.yaml
+      str-specific: 1.yaml
+example-exists:
+  str-2: This property exists in all files, and is overridden by 1.yaml
 example-mixed:
   array-common:
   - yes
   - for sure again
+  array-specific:
+  - no
+  - because this is specific to 1.yaml
   str-common: common string
+  str-specific: 1.yaml
   sre-common-multiline: |
     -----BEGIN PUBLIC KEY-----
     01234567890
     -----END PUBLIC KEY-----
+  unique-to-1: this property is unique to 1.yaml

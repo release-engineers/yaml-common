@@ -16,6 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - shell: bash
+        run: |
+          ./setup.sh
+          ./test.sh
       - uses: EffortGames/action-template@v1
         with:
           source: 'README.md.template'

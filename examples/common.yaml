@@ -1,0 +1,3 @@
+example-exists:
+  str-1: This property already exists in common.yaml
+  str-2: This property exists in all files

@@ -5,29 +5,38 @@
 # yaml-common
 
 Extracts and merges common parts of YAML from one set of files into a common file.
-
 Note that this project attempts to preserve comments, but can not preserve formatting.
+
+## Setup
+
+```bash
+{{ load('setup.sh') }}
+```
 
 ## Usage
 
-`main.py <common file> <merged file 1> <merged file 2> ...`
+`main.py <common file> <file 1> <file 2> ...`
+
+Example;
 
 ```bash
-{{ load('test.sh') }}
+{{ load('usage.sh') }}
 ```
-See [test.sh](test.sh).
+See [usage.sh](usage.sh).
 
-The above example moves the common parts of "merged-1.yaml" and "merged-2.yaml" into "common.yaml" where possible. Possible means,
+The above example moves the common parts of "1.yaml" and "2.yaml" into "common.yaml" where possible. Possible means,
 that "common.yaml" does not already contain its own definition for any parts.
 
-Content of `merged-1.yaml`:
+#### Input
+
+Content of `1.yaml`:
 ```yml
-{{ load('examples/merged-1.yaml') }}
+{{ load('examples/1.yaml') }}
 ```
 
-Content of `merged-2.yaml`:
+Content of `2.yaml`:
 ```yml
-{{ load('examples/merged-1.yaml') }}
+{{ load('examples/1.yaml') }}
 ```
 
 Content of `common.yaml`:
@@ -35,20 +44,22 @@ Content of `common.yaml`:
 {{ load('examples/common.yaml') }}
 ```
 
-After running the above example, the content of the files will be:
+#### Output
 
-Expected content of `merged-1.yaml`:
+After running the above example, the content of the files will have changed to:
+
+Expected content of `1.yaml`:
 ```yml
-{{ load('examples/merged-1-expected.yaml') }}
+{{ load('test/1.yaml') }}
 ```
 
-Expected content of `merged-2.yaml`:
+Expected content of `2.yaml`:
 ```yml
-{{ load('examples/merged-2-expected.yaml') }}
+{{ load('test/2.yaml') }}
 ```
 
 Expected content of `common.yaml`:
 ```yml
-{{ load('examples/common-expected.yaml') }}
+{{ load('test/common.yaml') }}
 ```
 

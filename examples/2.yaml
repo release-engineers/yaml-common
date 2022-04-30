@@ -13,17 +13,19 @@ example-common:
 example-specific:
   depth:
     more-depth:
-      # specific comment to merged-1.yaml
-      str-specific: merged-2.yaml
+      # specific comment to 1.yaml
+      str-specific: 2.yaml
+example-exists:
+  str-2: This property exists in all files, and is overridden by 2.yaml
 example-mixed:
   array-common:
   - yes
   - for sure again
   array-specific:
   - no
-  - because this is specific to merged-2.yaml
+  - because this is specific to 2.yaml
   str-common: common string
-  str-specific: merged-2.yaml
+  str-specific: 2.yaml
   sre-common-multiline: |
     -----BEGIN PUBLIC KEY-----
     01234567890

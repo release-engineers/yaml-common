@@ -51,15 +51,15 @@ def all_contain_key(candidates, key):
     return True
 
 
-def all_equal(merged_objs):
+def all_equal(objs):
     """
     Check if all given objects' values are equal to each other.
-    :param merged_objs:
+    :param objs:
     :return: boolean
     """
-    base = merged_objs[0]
-    for merged_obj in merged_objs[1:]:
-        diff = DeepDiff(base, merged_obj)
+    base = objs[0]
+    for obj in objs[1:]:
+        diff = DeepDiff(base, obj)
         if diff:
             return False
     return True

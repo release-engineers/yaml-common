@@ -13,11 +13,11 @@ for filename in sys.argv[1:]:
     with open(filename, 'r') as f:
         datas.append(yaml.load(f) or {})
 
-source_common = datas[0]
-merged_datas = datas[1:]
+data_original_common = datas[0]
+data_others = datas[1:]
 
-common_of_merged = common(merged_datas)
-merge(common_of_merged, merged_datas, source_common)
+data_common_of_others = common(data_others)
+merge(data_common_of_others, data_others, data_original_common)
 
 for i, filename in enumerate(sys.argv[1:]):
     with open(filename, 'w') as f:
