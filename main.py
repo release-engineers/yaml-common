@@ -2,8 +2,8 @@
 
 import sys
 import ruamel.yaml
-from common import common
-from merge import merge
+from libcommon import common
+from libmerge import merge
 
 yaml = ruamel.yaml.YAML()
 yaml.preserve_quotes = True
