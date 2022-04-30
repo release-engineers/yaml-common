@@ -5,7 +5,7 @@
 # yaml-common
 
 Extracts and merges common parts of YAML from one set of files into a common file.
-Note that this project attempts to preserve comments, but can not preserve formatting.
+Note that this project attempts to preserve comments and order of properties in your YAML files, but can not preserve formatting.
 
 ## Setup
 
@@ -17,12 +17,11 @@ Note that this project attempts to preserve comments, but can not preserve forma
 
 `main.py <common file> <file 1> <file 2> ...`
 
-Example;
+See [usage.sh](usage.sh).
 
 ```bash
 {{ load('usage.sh') }}
 ```
-See [usage.sh](usage.sh).
 
 The above example moves the common parts of "1.yaml" and "2.yaml" into "common.yaml" where possible. Possible means,
 that "common.yaml" does not already contain its own definition for any parts.
@@ -36,7 +35,7 @@ Content of `1.yaml`:
 
 Content of `2.yaml`:
 ```yml
-{{ load('examples/1.yaml') }}
+{{ load('examples/2.yaml') }}
 ```
 
 Content of `common.yaml`:
@@ -62,4 +61,3 @@ Expected content of `common.yaml`:
 ```yml
 {{ load('test/common.yaml') }}
 ```
-

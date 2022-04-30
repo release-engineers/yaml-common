@@ -19,7 +19,7 @@ jobs:
       - shell: bash
         run: |
           ./setup.sh
-          ./test.sh
+          ./usage.sh
       - uses: EffortGames/action-template@v1
         with:
           source: 'README.md.template'
