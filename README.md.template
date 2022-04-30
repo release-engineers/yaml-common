@@ -22,32 +22,33 @@ that "common.yaml" does not already contain its own definition for any parts.
 
 Content of `merged-1.yaml`:
 ```yml
-{{ load('examples/merged-1.yml') }}
+{{ load('examples/merged-1.yaml') }}
 ```
 
 Content of `merged-2.yaml`:
 ```yml
-{{ load('examples/merged-1.yml') }}
+{{ load('examples/merged-1.yaml') }}
 ```
 
 Content of `common.yaml`:
 ```yml common
-{{ load('examples/common.yml') }}
+{{ load('examples/common.yaml') }}
 ```
 
 After running the above example, the content of the files will be:
 
 Expected content of `merged-1.yaml`:
 ```yml
-{{ load('examples/merged-1-expected.yml') }}
+{{ load('examples/merged-1-expected.yaml') }}
 ```
 
 Expected content of `merged-2.yaml`:
 ```yml
-{{ load('examples/merged-2-expected.yml') }}
+{{ load('examples/merged-2-expected.yaml') }}
 ```
 
 Expected content of `common.yaml`:
 ```yml
-{{ load('examples/common-expected.yml') }}
+{{ load('examples/common-expected.yaml') }}
 ```
+
