@@ -8,19 +8,26 @@ def get_values(dicts, key):
     return values
 
 
-def merge_entry_perform(common, common_key, merged, target):
+def merge_delete_common(common, common_key, merged):
     """
-    Perform the actual merge from common to target and removing entries from merged.
+    Removes the common part from the merged dictionaries.
 
     :param common: Dictionary with common values
     :param common_key: Key referencing an entry in common to be merged
     :param merged: Dictionaries from which to remove common values
-    :param target: Dictionary to which to move common values
     """
-    target[common_key] = common[common_key]
+    common_value = common[common_key]
     for obj in merged:
         if common_key in obj:
-            del obj[common_key]
+            obj_value = obj[common_key]
+            diff = DeepDiff(common_value, obj_value)
+            if not diff:
+                del obj[common_key]
+                continue
+            if not isinstance(common_value, dict):
+                exit(10)
+            for key in common_value:
+                merge_delete_common(common_value, key, [obj_value])
 
 
 def merge_entry(common, merged, target, common_key):
@@ -36,7 +43,8 @@ def merge_entry(common, merged, target, common_key):
 
     # common entry which did not yet exist in target
     if common_key not in target:
-        merge_entry_perform(common, common_key, merged, target)
+        target[common_key] = common[common_key]
+        merge_delete_common(common, common_key, merged)
         return
 
     common_value = common[common_key]

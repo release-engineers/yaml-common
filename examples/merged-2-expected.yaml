@@ -1,0 +1,10 @@
+example-specific:
+  depth:
+    more-depth:
+      # specific comment to merged-2.yaml
+      str-specific: merged-2.yaml
+example-mixed:
+  array-specific:
+  - no
+  - because this is specific to merged-2.yaml
+  str-specific: merged-2.yaml

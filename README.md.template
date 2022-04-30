@@ -1,27 +1,51 @@
-# action-yaml-common
+<!-- README.md is auto-generated from README.md.template -->
 
-Extracts common parts of YAML files.
+# [{{ github.repository }}]({{ github.event.repository.owner.html_url }})
 
-### Setup
+# yaml-common
 
+Extracts and merges common parts of YAML from one set of files into a common file.
+
+## Usage
+
+`main.py <common file> <merged file 1> <merged file 2> ...`
+
+```bash
+{{ load('test.sh') }}
 ```
-#!/bin/bash
-python -m venv .venv
-source .venv/Scripts/activate
-python -m pip install -r requirements.txt
+See [test.sh](test.sh).
+
+The above example moves the common parts of "merged-1.yaml" and "merged-2.yaml" into "common.yaml" where possible. Possible means,
+that "common.yaml" does not already contain its own definition for any parts.
+
+Content of `merged-1.yaml`:
+```yml
+{{ load('examples/merged-1.yml') }}
 ```
 
-### Usage
-
-```
-source .venv/Scripts/activate
-./main.py <common file.yml> <merged file1.yml> <merged file2.yml> ...
+Content of `merged-2.yaml`:
+```yml
+{{ load('examples/merged-1.yml') }}
 ```
 
-### Example
-
+Content of `common.yaml`:
+```yml common
+{{ load('examples/common.yml') }}
 ```
-#!/bin/bash
-source .venv/Scripts/activate
-./main.py examples/sample-empty.yaml examples/sample-merged-1.yaml examples/sample-merged-2.yaml
+
+After running the above example, the content of the files will be:
+
+Expected content of `merged-1.yaml`:
+```yml
+{{ load('examples/merged-1-expected.yml') }}
+```
+
+Expected content of `merged-2.yaml`:
+```yml
+{{ load('examples/merged-2-expected.yml') }}
+```
+
+Expected content of `common.yaml`:
+```yml
+{{ load('examples/common-expected.yml') }}
 ```
