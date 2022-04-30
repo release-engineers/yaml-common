@@ -29,7 +29,6 @@ example-mixed:
       str-common: common string
       str-specific: sample-merged-2.yaml
       sre-common-multiline: |
-          -----BEGIN PUBLIC KEY-----
-          01234567890
-          -----END PUBLIC KEY-----
-
+        -----BEGIN PUBLIC KEY-----
+        01234567890
+        -----END PUBLIC KEY-----

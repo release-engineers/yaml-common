@@ -94,5 +94,5 @@ def common(values):
     if all_are_dicts(values):
         return common_dict(values)
     if all_equal(values):
-        return values[0]
+        return copy.deepcopy(values[0])
     return None

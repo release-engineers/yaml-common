@@ -10,24 +10,13 @@ example-common:
     float: 1.23
   bool: true
   null:
-
-example-specific:
-  depth:
-    more-depth:
-      # specific comment to sample-merged-1.yaml
-      str-specific: sample-merged-1.yaml
-
 example-mixed:
   depth:
     more-depth:
       array-common:
       - yes
       - for sure again
-      array-specific:
-      - no
-      - because this is specific to sample-merged-1.yaml
       str-common: common string
-      str-specific: sample-merged-1.yaml
       sre-common-multiline: |
         -----BEGIN PUBLIC KEY-----
         01234567890

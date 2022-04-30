@@ -11,14 +11,14 @@ datas = []
 
 for filename in sys.argv[1:]:
     with open(filename, 'r') as f:
-        data = yaml.load(f) or {}
-        datas.append(data)
+        datas.append(yaml.load(f) or {})
 
 source_common = datas[0]
-source_common_filename = sys.argv[1]
 merged_datas = datas[1:]
-merged_datas_filenames = sys.argv[2:]
 
 common_of_merged = common(merged_datas)
 merge(common_of_merged, merged_datas, source_common)
-yaml.dump(source_common, sys.stdout)
+
+for i, filename in enumerate(sys.argv[1:]):
+    with open(filename, 'w') as f:
+        yaml.dump(datas[i], f)
