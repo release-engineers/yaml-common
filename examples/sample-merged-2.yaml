@@ -14,11 +14,17 @@ example-common:
 example-specific:
   depth:
     more-depth:
-      # specific comment to sample-1.yaml
-      str-specific: sample-1.yaml
+      # specific comment to sample-merged-1.yaml
+      str-specific: sample-merged-2.yaml
 
 example-mixed:
   depth:
     more-depth:
+      array-common:
+      - yes
+      - for sure again
+      array-specific:
+      - no
+      - because this is specific to sample-merged-2.yaml
       str-common: common string
-      str-specific: sample-1.yaml
+      str-specific: sample-merged-2.yaml

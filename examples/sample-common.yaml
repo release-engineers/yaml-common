@@ -14,4 +14,7 @@ example-common:
 example-mixed:
   depth:
     more-depth:
-      str-specific: sample-1.yaml
+      array-common:
+      - yes
+      - for sure again
+      str-common: common string

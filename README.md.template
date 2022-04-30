@@ -16,5 +16,5 @@ python -m pip install -r requirements.txt
 ```
 #!/bin/bash
 source .venv/Scripts/activate
-./main.py examples/sample-empty.yaml examples/sample-1.yaml examples/sample-2.yaml
+./main.py examples/sample-empty.yaml examples/sample-merged-1.yaml examples/sample-merged-2.yaml
 ```
