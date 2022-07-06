@@ -1,4 +1,4 @@
-name: Update README.md
+name: Generate README.md
 
 on:
   push:
@@ -7,7 +7,6 @@ on:
     paths:
       - 'README.md.template'
       - '.github/workflows/generate-readme.yml'
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -17,10 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - shell: bash
-        run: |
-          ./setup.sh
-          ./usage.sh
       - uses: EffortGames/action-template@v1
         with:
           source: 'README.md.template'
