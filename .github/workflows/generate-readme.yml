@@ -22,6 +22,7 @@ jobs:
       - uses: release-engineers/action-setup-bash@v1
       - uses: actions/checkout@v2
       - run: |
+          ./setup.sh
           ./usage.sh
       - uses: release-engineers/action-template@v1
         with:
