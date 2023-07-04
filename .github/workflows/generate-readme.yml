@@ -21,6 +21,8 @@ jobs:
     steps:
       - uses: release-engineers/action-setup-bash@v1
       - uses: actions/checkout@v2
+      - run: |
+          ./usage.sh
       - uses: release-engineers/action-template@v1
         with:
           source: 'README.md.template'
