@@ -3,6 +3,7 @@
 # release-engineers/yaml-common
 
 [![Status: Production ready](https://img.shields.io/badge/status-production_ready-green)](https://release-engineers.com/open-source-badges/)
+[![PyPI version](https://badge.fury.io/py/re-yaml-common.svg)](https://badge.fury.io/py/re-yaml-common)
 
 Extracts and merges common parts of YAML from one set of files into a common file.
 Note that this project attempts to preserve comments and order of properties in your YAML files, but can not preserve formatting.
