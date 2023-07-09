@@ -1,0 +1,13 @@
+example-specific:
+  depth:
+    more-depth:
+      # specific comment to 1.yaml
+      str-specific: 1.yaml
+example-exists:
+  str-2: This property exists in all files, and is overridden by 1.yaml
+example-mixed:
+  array-specific:
+  - no
+  - because this is specific to 1.yaml
+  str-specific: 1.yaml
+  unique-to-1: this property is unique to 1.yaml

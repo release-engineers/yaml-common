@@ -1,6 +1,6 @@
 <!-- README.md is auto-generated from README.md.template -->
 
-# [{{ github.repository }}]({{ github.event.repository.owner.html_url }})
+# release-engineers/yaml-common
 
 [![Status: Production ready](https://img.shields.io/badge/status-production_ready-green)](https://release-engineers.com/open-source-badges/)
 
@@ -10,34 +10,30 @@ Note that this project attempts to preserve comments and order of properties in 
 ## Setup
 
 ```bash
-{{ load('setup.sh') }}
+pip install re-yaml-common
 ```
 
 ## Usage
 
-`main.py <common file> <file 1> <file 2> ...`
+`yaml-common merge <common file> <file 1> <file 2> ...`
 
-See [usage.sh](usage.sh). It demonstrates moving the common parts of "1.yaml" and "2.yaml" into "common.yaml" where it does not already contain its own definition;
-
-```bash
-{{ load('usage.sh') }}
-```
+An example below for `yaml-common merge tests/data/common.yaml tests/data/1.yaml tests/data/2.yaml`.
 
 #### Input
 
 Content of `common.yaml`:
 ```yml common
-{{ load('examples/common.yaml') }}
+{{ load('test/data/common.yaml') }}
 ```
 
 Content of `1.yaml`:
 ```yml
-{{ load('examples/1.yaml') }}
+{{ load('test/data/1.yaml') }}
 ```
 
 Content of `2.yaml`:
 ```yml
-{{ load('examples/2.yaml') }}
+{{ load('test/data/2.yaml') }}
 ```
 
 #### Output
@@ -46,15 +42,33 @@ After running the above example, the content of the files will have changed to:
 
 Expected content of `common.yaml`:
 ```yml
-{{ load('test/common.yaml') }}
+{{ load('test/data/common_expected.yaml') }}
 ```
 
 Expected content of `1.yaml`:
 ```yml
-{{ load('test/1.yaml') }}
+{{ load('test/data/1_expected.yaml') }}
 ```
 
 Expected content of `2.yaml`:
 ```yml
-{{ load('test/2.yaml') }}
+{{ load('test/data/2_expected.yaml') }}
 ```
+
+## Contributing
+
+This is a Python Poetry project using [Fire](https://github.com/google/python-fire).
+See [Poetry](https://python-poetry.org/) for more information.
+
+Development requires:
+
+- Bash
+- [Docker](https://www.docker.com/)
+- [Python](https://www.python.org/)
+- [Poetry](https://python-poetry.org/)
+
+See [`app.sh`](./app.sh) for building, running and releasing the application.
+
+## Links
+
+This project was created using [template-poetry](https://github.com/release-engineers/template-poetry).
