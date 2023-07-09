@@ -23,17 +23,17 @@ An example below for `yaml-common merge tests/data/common.yaml tests/data/1.yaml
 
 Content of `common.yaml`:
 ```yml common
-{{ load('test/data/common.yaml') }}
+{{ load('tests/data/common.yaml') }}
 ```
 
 Content of `1.yaml`:
 ```yml
-{{ load('test/data/1.yaml') }}
+{{ load('tests/data/1.yaml') }}
 ```
 
 Content of `2.yaml`:
 ```yml
-{{ load('test/data/2.yaml') }}
+{{ load('tests/data/2.yaml') }}
 ```
 
 #### Output
@@ -42,17 +42,17 @@ After running the above example, the content of the files will have changed to:
 
 Expected content of `common.yaml`:
 ```yml
-{{ load('test/data/common_expected.yaml') }}
+{{ load('tests/data/common_expected.yaml') }}
 ```
 
 Expected content of `1.yaml`:
 ```yml
-{{ load('test/data/1_expected.yaml') }}
+{{ load('tests/data/1_expected.yaml') }}
 ```
 
 Expected content of `2.yaml`:
 ```yml
-{{ load('test/data/2_expected.yaml') }}
+{{ load('tests/data/2_expected.yaml') }}
 ```
 
 ## Contributing
